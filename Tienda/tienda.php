@@ -12,7 +12,7 @@
   </head>
   <body>
     <div class="container">
-      <h2 style="color: yellow" onclick="changeColor(this.parentNode)">TIENDA DONDE LAS MEJORES MARCAS A EXCELENTES PRECIOS</h2>
+      <h2 style="color: PURPLE" onclick="changeColor(this.parentNode)">TIENDA DONDE LAS MEJORES MARCAS A EXCELENTES PRECIOS</h2>
       <form method="POST" action="ticket.php" target="_blank">
         <select name="productos" class="custom-select mb-3" id="producto">
           <option selected>PRODUCTOS DISPONIBLES</option>
