@@ -18,7 +18,7 @@
       <form method="POST" action="ticket.php" target="_blank" name="tienda" >
         <h1>Punto de venta Tulancingo</h1>
         <div class="form-group">
-          <label for="sel1">lista de productos (selecciona uno):</label>
+          <label for="sel1">Lista de productos (selecciona uno):</label>
           <select class="form-control" id="producto" name="producto">
             <option value="0" selected>Selecciona un producto</option>
             <option value="1286">Galon Aloe sabor mango </option>
@@ -48,7 +48,7 @@
           <label for="totalCompra">Total:</label>
           <input type="text" value="0" id="totalCompra" name="totalCompra" class="campodeshabilitado">
           <br>
-          <label for="cantidad">pago:</label>
+          <label for="cantidad">Pago:</label>
           <input type="number" class="form-control" id="pago" placeholder="Cantidad con la que se pagara" name="pago">
           <br>
           <input type="submit" class="btn btn-primary" value="Pagar" onclick="validateForm()">
