@@ -1,14 +1,15 @@
 <?php
-$texta = $_POST['texta'];
-$total = $_POST['total'];
-$pago = $_POST['pago'];
-$cambio = $pago - $total;
+ $carrito = $_POST ['comment'];
+ $total = $_POST ['totalCompra'];
+ $pago = $_POST['pago'];
+ $cambio =  $pago - $total;
 ?>
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <script type="text/javascript" src="js/carrito.js" charset="utf-8"></script>
-    <title>MI TIENDA</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" media="screen"/>
+    <script type="text/javascript" src="carrito.js" charset="utf-8"></script>
+    <title>Ticket de compra</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -18,13 +19,20 @@ $cambio = $pago - $total;
   </head>
   <body>
     <div>
-     <h1>MI TIENDA</h1>
-     <h2>TICKET</h2>
-     <p class="stiloslabel3">TUS COMPRAS: <br><?php print("\n" . $texta ."\n");?></p>
-     <p>TOTAL:<?php print($total);?></p>
-     <p>CAMBIO:<?php print($cambio);?></p>
-     <p><?php echo "FECHA: ". date("d")." del ". date("m"). " del ".date ("Y") ;?></p>
-     <p>****************MUCHAS GRACIAS POR SU COMPRA******************</p>
+      <h1 class="stiloslabel1">Green Xpress</h1>
+      <br>
+      <h2>Ticket:</h2>
+      <p>-----------------------------------------------------------</p>
+      <p class="stiloslabel1">Tus compras son: <br><?php print("\n" . $carrito ."\n");?></p>
+      <p>-----------------------------------------------------------</p>
+      <p>Total a pagar : <?php print("$".$total);?></p>
+      <p>Usted pago : <?php print("$".$pago);?></p>
+      <p>CAMBIO : <?php print("$".$cambio);?></p>
+      <p><?php echo "Fecha: ". date("d"). " del ". date("m"). " del ". date("Y") ;?></p>
+      <p>-----------------------------------------------------------</p>
+      <p class="stiloslabel1">Gracias por su compra, vuelva pronto.</p>
+      <p>-----------------------------------------------------------</p>
+      
     </div>
   </body>
 </html>
