@@ -23,7 +23,7 @@
             <option value="0" selected>Selecciona un producto</option>
             <option value="1286">Galon Aloe sabor mango </option>
             <option value="620">Polvo para malteada sabor Coco</option>
-            <option value="428">Caja de Brritas sabor Chocolate</option>
+            <option value="428">Caja de Barritas sabor Chocolate</option>
             <option value="563">CR7 Drive</option>
             <option value="1200">Proteina Strength</option>
             <option value="1320">Herbalife Formula 1</option>
