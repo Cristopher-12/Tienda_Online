@@ -3,7 +3,7 @@
  $total = $_POST ['totalCompra'];
  $pago = $_POST['pago'];
  $cambio =  $pago - $total;
- $idProductos = isset($_POST['ID_PRODUCTO']) ? $_POST['ID_PRODUCTO'] : '';
+ $idProductos = isset($_POST['idproductos']) ? $_POST['idproducto'] : '';
  $productoS= $_POST['producto'];
     
     include 'connect.php';  
@@ -12,13 +12,13 @@
 
     $productos = explode(";",$idProductos);
     foreach ($producto as $producto) {
-    $productoYCantidad = explode(":",$carritocompras);
+    $productoYCantidad = explode(":",$carrito);
     if(!isset($productoYCantidad[1]) || !isset($productoYCantidad[2])){
         continue;
     }
-    $db->exec('UPDATE Productos SET EXISTENCIAS= EXISTENCIAS - '.$productoYCantidad[2].' WHERE ID_PRODUCTO="'.$productoYCantidad[1].'"');
-    $existencias = $db->query('SELECT  EXISTENCIAS= EXISTENCIAS - '.$productoYCantidad[1].'FROM Productos WHERE ID_PRODUCTO="'.$productoYCantidad[0].'"');
-    $db->exec("INSERT INTO Tickets (CANTIDAD_PRODUCTO,PRODUCTO,TOTAL_PRODUCTO) VALUES ('$productoYCantidad[2]', '$productoYCantidad[1]', '$existencias');");
+    $db->exec('UPDATE Productos SET EXISTENCIAS= EXISTENCIAS - '.$productoYCantidad[1].' WHERE ID_PRODUCTO="'.$productoYCantidad[2].'"');
+    
+    $db->exec("INSERT INTO Tickets (CANTIDAD_PRODUCTO,PRODUCTO,TOTAL_PRODUCTO) VALUES ('$productoYCantidad[1]', '$productoYCantidad[2]', '$total');");
    
 		
 		

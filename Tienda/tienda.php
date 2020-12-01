@@ -1,3 +1,7 @@
+<?php
+    include 'connect.php';
+    $resultado = $db->query("SELECT * from Productos");
+?>
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -21,14 +25,20 @@
           <label for="sel1">Lista de productos (selecciona uno):</label>
           <select class="form-control" id="producto" name="producto">
             <option value="0" selected>Selecciona un producto</option>
-            <option value="1286">Galon Aloe sabor mango </option>
-            <option value="620">Polvo para malteada sabor Coco</option>
-            <option value="428">Caja de Barritas sabor Chocolate</option>
-            <option value="563">CR7 Drive</option>
-            <option value="1200">Proteina Strength</option>
-            <option value="1320">Herbalife Formula 1</option>
-            <option value="800">Gel corporal de Aloe</option>
-            <option value="300" >Te verde sabor granada</option>
+            <?php 
+                        
+                        while ($row = $resultado->fetchArray())
+                        {
+                            $existencias = $row["EXISTENCIAS"];
+                            if ($existencias>0)
+                            {
+                    ?>
+                                <option data-id="<?php echo $row['ID_PRODUCTO']?>" value="<?php echo $row['PRECIO']?>"> <?php echo $row['PRODUCTO']?></option>
+                    <?php
+                            }
+                        }
+                    ?> 
+            ?>
           </select>
         
           <label for="cantidad">Cantidad</label>

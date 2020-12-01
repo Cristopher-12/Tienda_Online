@@ -6,7 +6,7 @@ function insertar(){
   var total=0;
   
   if(cantidad<10 & cantidad >0 &  precio >0){
-    $("#comment").text(carrito +"Cantidad: "+ cantidad + "\tProducto: " + nombreProducto +  "\tPrecio:$" + precio + "\tTotal:$"+ parseFloat(cantidad)*parseFloat(precio)+"\n");
+    $("#comment").text(carrito + cantidad + nombreProducto +  "\tPrecio:$" + precio + "\tTotal:$"+ parseFloat(cantidad)*parseFloat(precio)+"\n");
     llenaTotal(parseFloat(cantidad)* parseFloat(precio));
     $("#cantidad_product").val(" ")
     $("#producto").val("0")
