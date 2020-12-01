@@ -14,7 +14,7 @@
 
 <body>
     <div class="container-fluid">
-        <h1>lISTA DE PRODUCTOS</h1>
+        <h1>LISTA DE PRODUCTOS</h1>
         <a href="../index.php">Regresar</a>
         <a href="insert.php">Insert</a>
         
