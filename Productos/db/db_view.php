@@ -18,8 +18,8 @@
 
     $form = "
         <div class='form-group'>
-            <label for='ID_PRODUCTO'>ID PRODUCTO</label>
-            <input type='text' readonly class='form-control' id='ID_PRODUCTO' name='ID_PRODUCTO' aria-describedby='ID_PERSONA' value='$id_producto'>
+            <label for='ID_PRODUCTO'>ID_PRODUCTO</label>
+            <input type='text' readonly class='form-control' id='ID_PRODUCTO' name='ID_PRODUCTO' aria-describedby='ID_PRODUCTO' value='$id_producto'>
         </div>
         <div class='form-group'>
             <label for='PRODUCTO'>PRODUCTO</label>
