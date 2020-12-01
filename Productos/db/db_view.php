@@ -1,29 +1,37 @@
 <?php
 
-    $id_persona = $_GET["id_persona"];
+    $id_producto = $_GET["ID_PRODUCTO"];
+    $producto = $_GET["PRODUCTO"];
+    $precio = $_GET["PRECIO"];
+    $existencias = $_GET["EXISTENCIAS"];
 
-    $db = new SQLite3("../agenda.db");
+    $db = new SQLite3("../tienda.db");
 
-    $resultado = $db->query("SELECT * from personas where id_persona='$id_persona';");
+    $resultado = $db->query("SELECT * from Productos where ID_PRODUCTO='$id_producto';");
 
     while ($row = $resultado->fetchArray()) {
-        $id_persona = $row["id_persona"];
-        $nombre = $row["nombre"];
-        $primer_apellido = $row["primer_apellido"];
+        $id_producto = $row["ID_PRODUCTO"];
+        $producto = $row["PRODUCTO"];
+        $precio = $row["PRECIO"];
+        $existencias = $row["EXISTENCIAS"];
     }
 
     $form = "
         <div class='form-group'>
-            <label for='id_persona'>ID</label>
-            <input type='text' readonly class='form-control' id='id_persona' name='id_persona' aria-describedby='Id persona' value='$id_persona'>
+            <label for='ID_PRODUCTO'>ID PRODUCTO</label>
+            <input type='text' readonly class='form-control' id='ID_PRODUCTO' name='ID_PRODUCTO' aria-describedby='ID_PERSONA' value='$id_producto'>
         </div>
         <div class='form-group'>
-            <label for='nombre'>Nombre</label>
-            <input type='text' class='form-control' id='nombre' name='nombre' aria-describedby='nombre' value='$nombre'>
+            <label for='PRODUCTO'>PRODUCTO</label>
+            <input type='text' class='form-control' id='PRODUCTO' name='PRODUCTO' aria-describedby='PRODUCTO' value='$producto'>
         </div>
         <div class='form-group'>
-            <label for='primer_apellido'>Primer apellido</label>
-            <input type='text' class='form-control' id='primer_apellido' name='primer_apellido' aria-describedby='primer_apellido' value='$primer_apellido'>
+            <label for='PRECIO'>PRECIO</label>
+            <input type='text' class='form-control' id='PRECIO' name='PRECIO' aria-describedby='PRECIO' value='$precio'>
+        </div>
+        <div class='form-group'>
+            <label for='EXISTENCIAS'>EXISTENCIAS</label>
+            <input type='text' class='form-control' id='EXISTENCIAS' name='EXISTENCIAS' aria-describedby='EXISTENCIAS' value='$existencias'>
         </div>
         ";
 

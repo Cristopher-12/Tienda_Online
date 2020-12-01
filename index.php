@@ -12,7 +12,7 @@
 <body>
     <div class="container-fluid">
         <h1>Index</h1>
-        <a href="personas/index.php">Lista de personas</a>
+        <a href="Productos/index.php">Lista de personas</a>
     </div>
 </body>
 </html>

@@ -3,7 +3,8 @@
 
     $db = new SQLite3("../../tienda.db");
 
-    $db->exec("DELETE FROM Productos where ID_PRODUCTOS='$id_producto';");
+    $db->exec("DELETE FROM Productos where ID_PRODUCTO='$id_producto';");
 
     header("Location: ../index.php");
 ?>
+

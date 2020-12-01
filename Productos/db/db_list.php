@@ -1,5 +1,5 @@
 <?php
-    $db = new SQLite3("../agenda.db");
+    $db = new SQLite3("../tienda.db");
 
     $resultado = $db->query("SELECT * from Productos;");
 
@@ -10,9 +10,8 @@
                 <th>ID_PRODUCTO</th>
                 <th>PRODUCTO</th>
                 <th>PRECIO</th>
-                <th>View</th>
-                <th>Update</th>
-                <th>Delete</th>
+                <th>EXISTENCIAS</th>
+
             </tr>
             </thead>
             ";
@@ -20,19 +19,19 @@
     print($table);
 
     while ($row = $resultado->fetchArray()) {
-        //Forma 1 para mostrar datos
-        $id_persona = $row['ID_PRODUCTO'];
-        $nombre = $row['PRODUCTO'];
-        $primer_apellido = $row['primer_apellido'];
+        
+        $id_producto = $row['ID_PRODUCTO'];
+        $producto = $row['PRODUCTO'];
+        $precio = $row['PRECIO'];
 
         $table = "
             <tr>
-                <td>$id_persona</td>
-                <td>$nombre</td>
-                <td>$primer_apellido</td>
-                <td><a href='view.php?id_persona=$id_persona'>View</a></td>
-                <td><a href='update.php?id_persona=$id_persona'>Update</a></td>
-                <td><a href='delete.php?id_persona=$id_persona'>Delete</a></td>
+                <td>$id_producto</td>
+                <td>$producto</td>
+                <td>$precio</td>
+                <td><a href='view.php?ID_PRODUCTO=$id_producto'>View</a></td>
+                <td><a href='update.php?ID_PRODUCTO=$id_producto'>Update</a></td>
+                <td><a href='delete.php?ID_PRODUCTO=$id_producto'>Delete</a></td>
             </tr>
         ";
 

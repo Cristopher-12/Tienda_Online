@@ -1,11 +1,12 @@
 <?php
 
-    $id_persona = $_GET['id_persona'];
-    $nombre = $_GET['nombre'];
-    $primer_apellido = $_GET['primer_apellido'];
+    $id_producto = $_GET['ID_PRODUCTO'];
+    $producto = $_GET['PRODUCTO'];
+    $precio = $_GET['PRECIO'];
+    $existencias = $_GET['EXISTENCIAS'];
 
-    $db = new SQLite3('../../agenda.db');
-    $db->exec("UPDATE personas SET nombre='$nombre', primer_apellido='$primer_apellido' WHERE id_persona='$id_persona';");
+    $db = new SQLite3('../../tienda.db');
+    $db->exec("UPDATE Productos SET PRODUCTO='$producto', PRECIO='ID_$precio', EXISTENCIAS= '$existencias' WHERE ID_PRODUCTO='$id_producto';");
     header("Location: ../index.php");
 
 ?>
